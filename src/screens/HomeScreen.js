@@ -1,5 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet, Button, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Button,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 import MovieItemComponent from "../components/MovieItemComponent";
 
 import globalStyles from "../styles/globalStyles";
@@ -18,6 +26,16 @@ const HomeScreen = ({ navigation }) => {
     },
     // Add more movies here
   ];
+
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => (
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
+          <Icon name="menu" size={30} style={{ marginLeft: 10 }} />
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
 
   return (
     <View style={[globalStyles.container, backgroundMain]}>
