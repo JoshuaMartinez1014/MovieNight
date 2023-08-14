@@ -5,7 +5,6 @@ const MenuScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text>Menu Screen</Text>
-      <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
     </View>
   );
 };

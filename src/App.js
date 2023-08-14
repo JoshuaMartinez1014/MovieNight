@@ -11,9 +11,25 @@ const Drawer = createDrawerNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Menu" component={MenuScreen} />
+      <Drawer.Navigator
+        drawerType="slide"
+        initialRouteName="Home"
+        drawerPosition="right"
+      >
+        <Drawer.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Drawer.Screen
+          name="Menu"
+          component={MenuScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
       </Drawer.Navigator>
     </NavigationContainer>
   );
